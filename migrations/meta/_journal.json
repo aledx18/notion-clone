@@ -1,0 +1,27 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1706292048947,
+      "tag": "0000_freezing_tigra",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1706312315960,
+      "tag": "0001_chunky_jack_power",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1706451056304,
+      "tag": "0002_sharp_sinister_six",
+      "breakpoints": true
+    }
+  ]
+}
