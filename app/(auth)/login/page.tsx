@@ -50,7 +50,7 @@ export default function LoginPage() {
           if (submitError) setSubmitError('')
         }}
         onSubmit={form.handleSubmit(onSubmit)}
-        className='w-full justify-center sm:w-[400px] space-y-6 flex flex-col'>
+        className='justify-center lg:w-[400px] space-y-6 flex flex-col m-auto h-screen'>
         <Link href='/' className=' w-full flex justify-left items-center'>
           <span className='font-semibold text-white text-4xl first-letter:ml-2'>
             cypress.
@@ -88,12 +88,13 @@ export default function LoginPage() {
         {submitError && <FormMessage>{submitError}</FormMessage>}
         <Button
           type='submit'
+          variant='shadow'
           className='w-full p-6'
           size='lg'
           disabled={isLoading}>
           {!isLoading ? 'Login' : <Loader />}
         </Button>
-        <span className='self-container'>
+        <span className='self-container text-sm'>
           Dont have an account?{' '}
           <Link href='/signup' className='text-primary'>
             Sign Up
