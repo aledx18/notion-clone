@@ -19,7 +19,6 @@ import { useMemo, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import clsx from 'clsx'
 import Link from 'next/link'
 import Loader from '@/components/Loader'
 
@@ -51,16 +50,6 @@ export default function SignUpPage() {
     if (!searchParams) return ''
     return searchParams.get('error_description')
   }, [searchParams])
-
-  const confirmationAndErrorStyles = useMemo(
-    () =>
-      clsx('bg-primary', {
-        'bg-red-500/10': codeExchangeError,
-        'border-red-500/50': codeExchangeError,
-        'text-red-700': codeExchangeError
-      }),
-    [codeExchangeError]
-  )
 
   const form = useForm<z.infer<typeof SignUpFormSchema>>({
     mode: 'onChange',
@@ -150,7 +139,6 @@ export default function SignUpPage() {
             </Button>
           </>
         )}
-
         {submitError && <FormMessage>{submitError}</FormMessage>}
         <span className='self-container text-sm'>
           Already have an account?{' '}
@@ -160,7 +148,7 @@ export default function SignUpPage() {
         </span>
         {(confirmation || codeExchangeError) && (
           <>
-            <Alert className={confirmationAndErrorStyles}>
+            <Alert variant='shadow'>
               {!codeExchangeError && <MailCheck className='h-4 w-4' />}
               <AlertTitle>
                 {codeExchangeError ? 'Invalid Link' : 'Check your email.'}

@@ -1,9 +1,32 @@
 /* eslint-disable no-undef */
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const satoshi = localFont({
+  src: [
+    {
+      path: '../public/fonts/Satoshi-Light.woff2',
+      weight: '300',
+      style: 'normal'
+    },
+    {
+      path: '../public/fonts/Satoshi-Regular.woff2',
+      weight: '400',
+      style: 'normal'
+    },
+    {
+      path: '../public/fonts/Satoshi-Medium.woff2',
+      weight: '500',
+      style: 'normal'
+    },
+    {
+      path: '../public/fonts/Satoshi-Bold.woff2',
+      weight: '700',
+      style: 'normal'
+    }
+  ]
+})
 
 export const metadata: Metadata = {
   title: 'Notion-Clone',
@@ -17,7 +40,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <body className={satoshi.className}>{children}</body>
     </html>
   )
 }
